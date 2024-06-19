@@ -36,7 +36,7 @@ const Layout = () => {
         name="home"
         options={{
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="home" size={size} color={color} />
+            <FontAwesome name="registered" size={size} color={color} />
           ),
           header: () => <CustomHeader />,
           headerTransparent: true,
@@ -45,10 +45,11 @@ const Layout = () => {
       <Tabs.Screen
         name="crypto"
         options={{
-          headerShown: false,
+          headerTitle: "Crypto",
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="dollar" size={size} color={color} />
+            <FontAwesome name="bitcoin" size={size} color={color} />
           ),
+          header: () => <CustomHeader />,
         }}
       />
       <Tabs.Screen
@@ -56,12 +57,28 @@ const Layout = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="money" size={size} color={color} />
+            <FontAwesome name="line-chart" size={size} color={color} />
           ),
         }}
       />
-      <Tabs.Screen name="lifestyle" options={{ headerShown: false }} />
-      <Tabs.Screen name="transfers" options={{ headerShown: false }} />
+      <Tabs.Screen
+        name="lifestyle"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="th" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="transfers"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="exchange" size={size} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 };

@@ -99,8 +99,8 @@ const LoginScreen = () => {
             phoneNumber !== "" ? styles.enabled : styles.disabled,
             { marginBottom: 20 },
           ]}
-          onPress={() => onSignIn(SignInType.Phone)}
-          // onPress={() => router.replace("/(authenticated)/(tabs)/home")}
+          // onPress={() => onSignIn(SignInType.Phone)}
+          onPress={() => router.replace("/(authenticated)/(tabs)/home")}
         >
           <Text style={defaultStyles.buttonText}>Continue</Text>
         </TouchableOpacity>

@@ -61,16 +61,16 @@ const InitialLayout = () => {
     }
   }, [loaded]);
 
-  useEffect(() => {
-    if (!isLoaded) return;
-    const inAuthGroup = segments[0] === "(authenticated)";
-    if (isSignedIn && !inAuthGroup) {
-      router.replace("/(authenticated)/(tabs)/home");
-    } else if (!isSignedIn) {
-      router.replace("/");
-    }
-    console.log(isSignedIn);
-  }, [isSignedIn]);
+  // useEffect(() => {
+  //   if (!isLoaded) return;
+  //   const inAuthGroup = segments[0] === "(authenticated)";
+  //   if (isSignedIn && !inAuthGroup) {
+  //     router.replace("/(authenticated)/(tabs)/home");
+  //   } else if (!isSignedIn) {
+  //     router.replace("/");
+  //   }
+  //   console.log(isSignedIn);
+  // }, [isSignedIn]);
 
   if (!loaded || !isLoaded) {
     return <Text>Loading</Text>;
@@ -115,6 +115,10 @@ const InitialLayout = () => {
           headerShadowVisible: false,
           headerStyle: { backgroundColor: Colors.background },
         }}
+      />
+      <Stack.Screen
+        name="(authenticated)/crypto/[id]"
+        options={{ title: "", headerLargeTitle: true }}
       />
     </Stack>
   );

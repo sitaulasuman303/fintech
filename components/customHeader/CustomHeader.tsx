@@ -12,7 +12,7 @@ const CustomHeader = () => {
   return (
     <BlurView intensity={80} tint="extraLight" style={{ paddingTop: top }}>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.roundedBtn}>
+        <TouchableOpacity style={defaultStyles.circle}>
           <Text>SS</Text>
         </TouchableOpacity>
         <View style={styles.searchSection}>
