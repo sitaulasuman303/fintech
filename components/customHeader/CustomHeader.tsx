@@ -6,13 +6,22 @@ import Colors from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { TextInput } from "react-native-gesture-handler";
 import { defaultStyles } from "@/constants/Styles";
+import { Link, useRouter } from "expo-router";
 
 const CustomHeader = () => {
+  const router = useRouter();
   const { top } = useSafeAreaInsets();
   return (
     <BlurView intensity={80} tint="extraLight" style={{ paddingTop: top }}>
       <View style={styles.container}>
-        <TouchableOpacity style={defaultStyles.circle}>
+        <TouchableOpacity
+          onPress={() =>
+            router.push({
+              pathname: "/(authenticated)/(modals)/account",
+            })
+          }
+          style={defaultStyles.circle}
+        >
           <Text>SS</Text>
         </TouchableOpacity>
         <View style={styles.searchSection}>

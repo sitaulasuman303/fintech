@@ -3,13 +3,14 @@ import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { Stack, useRouter, useSegments } from "expo-router";
-import { Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 import * as SecureStore from "expo-secure-store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Ionicons } from "@expo/vector-icons";
 const client = new QueryClient();
 const CLERK_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 const tokenCache = {
@@ -119,6 +120,20 @@ const InitialLayout = () => {
       <Stack.Screen
         name="(authenticated)/crypto/[id]"
         options={{ title: "", headerLargeTitle: true }}
+      />
+      <Stack.Screen
+        name="(authenticated)/(modals)/account"
+        options={{
+          title: "",
+          headerTransparent: true,
+          presentation: "transparentModal",
+          animation: "fade",
+          headerLeft: () => (
+            <TouchableOpacity onPress={router.back}>
+              <Ionicons name="close-outline" size={34} color={"#fff"} />
+            </TouchableOpacity>
+          ),
+        }}
       />
     </Stack>
   );
