@@ -23,7 +23,7 @@ enum SignInType {
 }
 
 const LoginScreen = () => {
-  const [countryCode, setCountryCode] = useState("+977");
+  const [countryCode, setCountryCode] = useState("+1");
   const [phoneNumber, setPhoneNumber] = useState("");
   const keyboardVerticalOffset = Platform.OS === "ios" ? 80 : 0;
   const router = useRouter();
@@ -99,8 +99,8 @@ const LoginScreen = () => {
             phoneNumber !== "" ? styles.enabled : styles.disabled,
             { marginBottom: 20 },
           ]}
-          // onPress={() => onSignIn(SignInType.Phone)}
-          onPress={() => router.replace("/(authenticated)/(tabs)/home")}
+          onPress={() => onSignIn(SignInType.Phone)}
+          // onPress={() => router.replace("/(authenticated)/(tabs)/home")}
         >
           <Text style={defaultStyles.buttonText}>Continue</Text>
         </TouchableOpacity>
