@@ -74,6 +74,7 @@ const Layout = () => {
         name="transfers"
         options={{
           headerShown: false,
+          title: "More",
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="exchange" size={size} color={color} />
           ),

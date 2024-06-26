@@ -1,12 +1,9 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import React from "react";
+import MoreScreen from "@/screens/more";
 
 const transfers = () => {
-  return (
-    <View>
-      <Text>transfers</Text>
-    </View>
-  );
+  return <MoreScreen />;
 };
 
 export default transfers;
